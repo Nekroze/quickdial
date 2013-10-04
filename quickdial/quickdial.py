@@ -1,8 +1,18 @@
 """
+Quick Dial
+
+Usage:
+   quickdial 
+   quickdial -h | --help
+   quickdial -v | --version
+
+-h --help     show this
+-v --version  show version
 """
 from nekrobox.docdecs import params
 from . import gateaddr
 from . import pathing
+from . import __version__
 
 
 @params(origin=(int, "Point of origin symbol"),
@@ -21,4 +31,12 @@ def calculate(origin=None, length=6, count=1000,
         if distance < shortest[0]:
             shortest = (distance, address)
     return shortest
-            
+
+
+def main(argv=None):
+    vstr = "Quick Dial Gate Address Calculator v{0}"
+    arguments = docopt(__doc__, version=vstr.format(__version__), argv=argv)
+
+
+if __name__ == "__main__":
+    main()
