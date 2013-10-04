@@ -16,4 +16,4 @@ class TestGateAddr(object):
             assert addr[-1] == 5
 
     def test_address_string(self):
-        assert gateaddr.pretty([0, 2, 34, 10, 27, 24, 20]) == "AC8 Q1Y U"
+        assert gateaddr.pretty([0, 2, 34, 10, 27, 24, 20]) == "AC8 K1Y U"

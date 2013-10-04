@@ -19,7 +19,7 @@ from . import __version__
         length=(int, "Length of address excluding origin"),
         count=(int, "Number of addresses to generate"),
         symbols=(str, "Symbols for pretty printing"),
-        returns=(tuple, "The shortest distance and corresponding address")
+        returns=(tuple, "The shortest distance and corresponding address"))
 def calculate(origin=None, length=6, count=1000, 
               symbols="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"):
     """Generate a mass of addresses and find the fastest address to dial."""

@@ -4,7 +4,7 @@ from six.moves import range
 
 @params(one=(int, "First symbol"),
         two=(int, "Next symbol"),
-        symbols=(int, "Number of symbols to choose from")
+        symbols=(int, "Number of symbols to choose from"),
         returns=(int, "Shortest distance"))
 def distance(one, two, symbols=36):
     """Get the shortest distance between two symbols."""
@@ -19,7 +19,7 @@ def distance(one, two, symbols=36):
 
 
 @params(address=(list, "Gate address as generated"),
-        symbols=(int, "Number of symbols")
+        symbols=(int, "Number of symbols"),
         returns=(int, "Shortest distance"))
 def address_distance(address, symbols=36):
     """Get the shortest distance to dial this address."""
