@@ -13,4 +13,23 @@ def generate(origin=None, count=1000, length=6, symbols=36):
     """Returns a generator that pumps out randomly generated gate addresses."""
     if origin is None:
         origin = randint(1,symbols)
-    return ([randint(1,symbols) for _ in range(length)] + [origin] for _ in range(count))
+    return ([randint(1,symbols) for _ in range(length)] + [origin] 
+            for _ in range(count))
+
+
+@params(address=(list, "Gate address as generated"),
+        symbols=(str, "Pretty symbols to convert address to"),
+        returns=(str, "The gate address converted into a string"))
+def address_string(address, symbols="ABCDEFGHIJQLMNOPQRSTUVWXYZ0123456789"):
+    """
+    Converts the given gate address into a string by converting symbol
+    numbers to characters in the symbol string.
+
+    Symbols are grouped in threes.
+    """
+    characters = []
+    for x in address:
+        characters.append(symbols[x])
+        if len(characters) >= 3:
+            characters.append(' ')
+    return ''.join(characters)
