@@ -12,8 +12,8 @@ from six.moves import range
 def generate(origin=None, count=1000, length=6, symbols=36):
     """Returns a generator that pumps out randomly generated gate addresses."""
     if origin is None:
-        origin = randint(1,symbols)
-    return ([randint(1,symbols) for _ in range(length)] + [origin] 
+        origin = randint(0, symbols)
+    return ([randint(0, symbols) for _ in range(length)] + [origin] 
             for _ in range(count))
 
 
