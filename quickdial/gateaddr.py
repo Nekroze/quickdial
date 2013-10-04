@@ -20,7 +20,7 @@ def generate(origin=None, count=1000, length=6, symbols=36):
 @params(address=(list, "Gate address as generated"),
         symbols=(str, "Pretty symbols to convert address to"),
         returns=(str, "The gate address converted into a string"))
-def pretty(address, symbols="ABCDEFGHIJQLMNOPQRSTUVWXYZ0123456789"):
+def pretty(address, symbols="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"):
     """
     Converts the given gate address into a string by converting symbol
     numbers to characters in the symbol string.
@@ -28,8 +28,11 @@ def pretty(address, symbols="ABCDEFGHIJQLMNOPQRSTUVWXYZ0123456789"):
     Symbols are grouped in threes.
     """
     characters = []
+    count = 0
     for x in address:
         characters.append(symbols[x])
-        if len(characters) >= 3:
+        count += 1
+        if count >= 3:
             characters.append(' ')
+            count = 0
     return ''.join(characters)
