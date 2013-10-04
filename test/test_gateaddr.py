@@ -14,3 +14,6 @@ class TestGateAddr(object):
     def test_generate_origin(self):
         for addr in gateaddr.generate(5, count=10):
             assert addr[-1] == 5
+
+    def test_address_string(self):
+        assert gateaddr.pretty([0, 2, 34, 10, 27, 24, 20]) == "AD7 J0W T"
